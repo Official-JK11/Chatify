@@ -106,10 +106,23 @@ export const updateProfile = async (req,res) =>{
             { profilePic: uploadResponse.secure_url } ,
             { new: true }
         )
-        
+
         res.status(200).json(updatedUser)
     } catch (error) {
         console.log(`Update Profile Error: ${error}`);
         return res.status(500).json({message: `Something is wrong in our system`})
+    }
+}
+
+export const checkAuth = (req,res) => {
+    try {
+        if (!req.user) {
+            return res.status(401).json({ message: "Unauthorized" });
+        }
+       return res.status(200).json(req.user)
+    } catch (error) {
+        console.log(`CheckAuth Error: ${error}`);
+        return res.status(500).json({message: "Internal Server Error"});
+        
     }
 }
