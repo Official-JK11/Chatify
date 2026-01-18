@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import User from "../models/user.model";
 
-const protectRoute = async (req, res, next) => {
+export const protectRoute = async (req, res, next) => {
     try {
         const token = req.cookie.jwt
         if(!token){
@@ -25,5 +25,3 @@ const protectRoute = async (req, res, next) => {
         return res.status(500).json({message:"Middleware error"});
     }
 }
-
-export { protectRoute };
