@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 
 import authRoutes from "./routes/auth.route.js"
+import messageRoutes from "./routes/message.route.js"
 import { connectDB } from "./lib/db.js";
 dotenv.config()
 
@@ -14,10 +15,12 @@ app.use(express.urlencoded({ extended: true })); // for form data
 
 app.use(cookieParser());
 
-app.use("/api/auth",authRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/messages", messageRoutes);
+
 
 app.listen(PORT, () => {
-    console.log(`Port is running at port, ${ PORT } `);
+    console.log(`Port is running at port, ${PORT} `);
     connectDB()
-    })
+})
 
