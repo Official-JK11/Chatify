@@ -5,6 +5,9 @@ import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.route.js"
 import messageRoutes from "./routes/message.route.js"
 import { connectDB } from "./lib/db.js";
+
+import cors from "cors";
+
 dotenv.config()
 
 const app = express()
@@ -14,6 +17,12 @@ app.use(express.json()); // for json data
 app.use(express.urlencoded({ extended: true })); // for form data
 
 app.use(cookieParser());
+
+app.use(cors({
+    origin: "http://localhost:5174",
+    credentials: true,
+}
+));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
