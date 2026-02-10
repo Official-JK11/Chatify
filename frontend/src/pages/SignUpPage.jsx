@@ -40,17 +40,17 @@ const SignUpPage = () => {
         <div className="min-h-screen grid lg:grid-cols-2">
             {/* left side */}
             <div className="flex flex-col justify-center items-center p-6 sm:p-12">
-                <div className="w-full max-w-md space-y-8">
+                <div className="w-full max-w-2xl space-y-8">
                     {/* LOGO */}
                     <div className="text-center mb-8">
                         <div className="flex flex-col items-center gap-2 group">
                             <div
-                                className="size-12 rounded-xl bg-primary/10 flex items-center justify-center 
+                                className="size-16 rounded-2xl bg-primary/10 flex items-center justify-center 
               group-hover:bg-primary/20 transition-colors"
                             >
-                                <MessageSquare className="size-6 text-primary" />
+                                <MessageSquare className="size-8 text-primary" />
                             </div>
-                            <h1 className="text-2xl font-bold mt-2">Create Account</h1>
+                            <h1 className="text-3xl font-bold mt-3">Create Account</h1>
                             <p className="text-base-content/60">Get started with your free account</p>
                         </div>
                     </div>
@@ -66,7 +66,7 @@ const SignUpPage = () => {
                                 </div>
                                 <input
                                     type="text"
-                                    className={`input input-bordered w-full pl-10`}
+                                    className={`input input-bordered input-lg w-full pl-12 text-lg`}
                                     placeholder="John Doe"
                                     value={formData.fullName}
                                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
@@ -113,15 +113,15 @@ const SignUpPage = () => {
                                     onClick={() => setShowPassword(!showPassword)}
                                 >
                                     {showPassword ? (
-                                        <EyeOff className="size-5 text-base-content/40" />
+                                        <EyeOff className="size-6 text-base-content/40" />
                                     ) : (
-                                        <Eye className="size-5 text-base-content/40" />
+                                        <Eye className="size-6 text-base-content/40" />
                                     )}
                                 </button>
                             </div>
                         </div>
 
-                        <button type="submit" className="btn btn-primary w-full" disabled={isSigningUp}>
+                        <button type="submit" className="btn btn-primary btn-lg w-full text-lg" disabled={isSigningUp}>
                             {isSigningUp ? (
                                 <>
                                     <Loader2 className="size-5 animate-spin" />
