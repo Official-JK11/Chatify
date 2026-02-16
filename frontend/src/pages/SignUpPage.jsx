@@ -48,25 +48,25 @@ const SignUpPage = () => {
                                 className="size-16 rounded-2xl bg-primary/10 flex items-center justify-center 
               group-hover:bg-primary/20 transition-colors"
                             >
-                                <MessageSquare className="size-8 text-primary" />
+                                <MessageSquare className="size-10 text-primary" />
                             </div>
-                            <h1 className="text-3xl font-bold mt-3">Create Account</h1>
-                            <p className="text-base-content/60">Get started with your free account</p>
+                            <h1 className="text-4xl font-bold mt-3">Create Account</h1>
+                            <p className="text-lg text-base-content/60">Get started with your free account</p>
                         </div>
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-medium">Full Name</span>
+                                <span className="label-text text-lg font-medium">Full Name</span>
                             </label>
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <User className="size-5 text-base-content/40" />
+                                    <User className="size-6 text-base-content/40" />
                                 </div>
                                 <input
                                     type="text"
-                                    className={`input input-bordered input-lg w-full pl-12 text-lg`}
+                                    className={`input input-bordered input-lg w-full pl-14 text-lg`}
                                     placeholder="John Doe"
                                     value={formData.fullName}
                                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
@@ -76,15 +76,15 @@ const SignUpPage = () => {
 
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-medium">Email</span>
+                                <span className="label-text text-lg font-medium">Email</span>
                             </label>
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <Mail className="size-5 text-base-content/40" />
+                                    <Mail className="size-6 text-base-content/40" />
                                 </div>
                                 <input
                                     type="email"
-                                    className={`input input-bordered w-full pl-10`}
+                                    className={`input input-bordered input-lg w-full pl-14 text-lg`}
                                     placeholder="you@example.com"
                                     value={formData.email}
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -94,15 +94,15 @@ const SignUpPage = () => {
 
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-medium">Password</span>
+                                <span className="label-text text-lg font-medium">Password</span>
                             </label>
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <Lock className="size-5 text-base-content/40" />
+                                    <Lock className="size-6 text-base-content/40" />
                                 </div>
                                 <input
                                     type={showPassword ? "text" : "password"}
-                                    className={`input input-bordered w-full pl-10`}
+                                    className={`input input-bordered input-lg w-full pl-14 text-lg`}
                                     placeholder="••••••••"
                                     value={formData.password}
                                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -113,9 +113,9 @@ const SignUpPage = () => {
                                     onClick={() => setShowPassword(!showPassword)}
                                 >
                                     {showPassword ? (
-                                        <EyeOff className="size-6 text-base-content/40" />
+                                        <EyeOff className="size-7 text-base-content/40" />
                                     ) : (
-                                        <Eye className="size-6 text-base-content/40" />
+                                        <Eye className="size-7 text-base-content/40" />
                                     )}
                                 </button>
                             </div>
@@ -134,7 +134,7 @@ const SignUpPage = () => {
                     </form>
 
                     <div className="text-center">
-                        <p className="text-base-content/60">
+                        <p className="text-lg text-base-content/60">
                             Already have an account?{" "}
                             <Link to="/login" className="link link-primary">
                                 Sign in

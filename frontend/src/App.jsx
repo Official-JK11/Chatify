@@ -36,7 +36,14 @@ const App = () => {
                 <Route path="/settings" element={<SettingsPage />} />
                 <Route path="/profile" element={authUser ? <ProfilePage /> : <Navigate to="/login" />} />
             </Routes>
-            <Toaster />
+            <Toaster
+                toastOptions={{
+                    style: {
+                        fontSize: '1.5rem',
+                        padding: '16px 24px',
+                    },
+                }}
+            />
         </div >
     );
 };
